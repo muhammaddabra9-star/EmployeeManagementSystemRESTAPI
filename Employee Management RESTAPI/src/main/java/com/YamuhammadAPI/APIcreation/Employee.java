@@ -7,7 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
-
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 @Table(name = "employee")
@@ -55,7 +56,11 @@ public class Employee {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
+
+    }     @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
+
 }
 
 
