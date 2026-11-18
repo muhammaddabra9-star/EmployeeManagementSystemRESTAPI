@@ -26,5 +26,8 @@ public class EmployeeService {
         employee.setId(id);
         return employeeRepository.save(employee);
     }
+    public void deleteEmployee(Long id) {
+        employeeRepository.deleteById(id);
+    }
 
 }
